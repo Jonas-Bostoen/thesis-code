@@ -1,0 +1,27 @@
+---
+import Navbar from "../components/Navbar/Navbar";
+import ParkingData from "../components/ParkingData/ParkingData";
+import Welcome from "../components/Welcome/Welcome";
+import '../style/style.scss';
+
+// Server side fetch data
+export async function get() {
+	const res = await fetch('https://data.stad.gent/api/records/1.0/search/?dataset=bezetting-parkeergarages-real-time');
+	const data = await res.json();
+	return data;
+}
+---	
+<script src="https://kit.fontawesome.com/4fd83527d4.js" crossOrigin="anonymous"></script>
+
+
+<Navbar />
+
+
+<main>
+	<Welcome />
+	<ParkingData 
+	data={await get()}
+	client:idle
+	/>
+
+</main>

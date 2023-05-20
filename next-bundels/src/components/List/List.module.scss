@@ -1,0 +1,30 @@
+.list {
+	overflow-y: scroll;
+	background-color: white;
+	padding: 15px 25px;
+	border-radius: 12px;
+	height: 100%;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.164), 0 10px 25px 0 rgba(0, 0, 0, 0.103);
+
+	li {
+		list-style: none;
+		padding: 10px 3px;
+
+		div {
+			padding: 0 5px;
+			user-select: none;
+		}
+
+		&:hover {
+			background-color: lightgray;
+			border-radius: 8px;
+			cursor: pointer;
+		}
+	}
+
+	li {
+		transition: 0.2s;
+		margin-top: 5px;
+		border-bottom: 1px solid lightgray;
+	}
+}
